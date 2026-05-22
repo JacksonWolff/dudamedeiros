@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-bone text-ink font-sans antialiased;
+  }
+  ::selection {
+    @apply bg-ink text-bone;
+  }
+}
+
+@layer components {
+  /* Thin uppercase label used across sections */
+  .eyebrow {
+    @apply text-[11px] uppercase tracking-luxe text-stone font-medium;
+  }
+  .section-pad {
+    @apply px-6 sm:px-10 lg:px-16;
+  }
+  .rule {
+    @apply h-px w-full bg-line;
+  }
+}
+
+/* Respect reduced-motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
