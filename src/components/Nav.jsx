@@ -1,16 +1,38 @@
 import { useEffect, useState } from 'react'
 import { profile } from '../data/portfolio'
+import { useLanguage } from '../context/LanguageContext'
 
-const links = [
-  { href: '#portfolio', label: 'Portfolio' },
-  { href: '#measurements', label: 'Profile' },
-  { href: '#reel', label: 'Reel' },
-  { href: '#contact', label: 'Contact' },
-]
+function LanguageSwitcher({ scrolled, className = '' }) {
+  const { lang, setLang } = useLanguage()
+  const tone = scrolled ? 'text-ink' : 'text-bone mix-blend-difference'
+  const cls = (active) =>
+    `text-[11px] uppercase tracking-[0.25em] transition-opacity ${
+      active ? 'opacity-100' : 'opacity-50 hover:opacity-90'
+    }`
+  return (
+    <div className={`flex items-center gap-2 ${tone} ${className}`}>
+      <button type="button" onClick={() => setLang('en')} className={cls(lang === 'en')}>
+        EN
+      </button>
+      <span aria-hidden className="opacity-40">/</span>
+      <button type="button" onClick={() => setLang('pt')} className={cls(lang === 'pt')}>
+        PT
+      </button>
+    </div>
+  )
+}
 
 export default function Nav() {
+  const { t } = useLanguage()
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+
+  const links = [
+    { href: '#portfolio', label: t.nav.portfolio },
+    { href: '#measurements', label: t.nav.profile },
+    { href: '#reel', label: t.nav.reel },
+    { href: '#contact', label: t.nav.contact },
+  ]
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24)
@@ -35,29 +57,33 @@ export default function Nav() {
           {profile.name}
         </a>
 
-        <ul
-          className={`hidden items-center gap-10 md:flex text-[12px] uppercase tracking-[0.2em] transition-colors ${
-            scrolled ? 'text-ink' : 'text-bone mix-blend-difference'
-          }`}
-        >
-          {links.map((l) => (
-            <li key={l.href}>
-              <a href={l.href} className="opacity-80 hover:opacity-100 transition-opacity">
-                {l.label}
-              </a>
-            </li>
-          ))}
-        </ul>
+        <div className="flex items-center gap-8">
+          <ul
+            className={`hidden items-center gap-10 md:flex text-[12px] uppercase tracking-[0.2em] transition-colors ${
+              scrolled ? 'text-ink' : 'text-bone mix-blend-difference'
+            }`}
+          >
+            {links.map((l) => (
+              <li key={l.href}>
+                <a href={l.href} className="opacity-80 hover:opacity-100 transition-opacity">
+                  {l.label}
+                </a>
+              </li>
+            ))}
+          </ul>
 
-        <button
-          aria-label="Toggle menu"
-          onClick={() => setOpen((v) => !v)}
-          className={`md:hidden text-[12px] uppercase tracking-[0.2em] ${
-            scrolled ? 'text-ink' : 'text-bone mix-blend-difference'
-          }`}
-        >
-          {open ? 'Close' : 'Menu'}
-        </button>
+          <LanguageSwitcher scrolled={scrolled} className="hidden md:flex" />
+
+          <button
+            aria-label="Toggle menu"
+            onClick={() => setOpen((v) => !v)}
+            className={`md:hidden text-[12px] uppercase tracking-[0.2em] ${
+              scrolled ? 'text-ink' : 'text-bone mix-blend-difference'
+            }`}
+          >
+            {open ? t.nav.close : t.nav.menu}
+          </button>
+        </div>
       </nav>
 
       {open && (
@@ -70,6 +96,9 @@ export default function Nav() {
                 </a>
               </li>
             ))}
+            <li className="py-3">
+              <LanguageSwitcher scrolled className="justify-start" />
+            </li>
           </ul>
         </div>
       )}

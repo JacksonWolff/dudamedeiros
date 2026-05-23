@@ -1,12 +1,14 @@
 import { motion } from 'framer-motion'
 import { profile, hero, contact } from '../data/portfolio'
+import { useLanguage } from '../context/LanguageContext'
 
 export default function Hero() {
+  const { t } = useLanguage()
   return (
     <section id="top" className="relative h-[100svh] min-h-[600px] w-full overflow-hidden bg-ink">
       <motion.img
         src={hero.src}
-        alt={hero.alt}
+        alt={t.hero.alt}
         className="absolute inset-0 h-full w-full object-cover object-top"
         initial={{ scale: 1.08, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
@@ -23,7 +25,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, delay: 0.5 }}
           >
-            {profile.role}
+            {t.role}
           </motion.p>
 
           <motion.h1
@@ -45,7 +47,7 @@ export default function Hero() {
               href="#portfolio"
               className="inline-flex items-center justify-center border border-bone/70 px-8 py-3 text-[12px] uppercase tracking-[0.25em] text-bone transition-colors hover:bg-bone hover:text-ink"
             >
-              View Portfolio
+              {t.hero.ctaPortfolio}
             </a>
             <a
               href={contact.whatsapp}
@@ -53,7 +55,7 @@ export default function Hero() {
               rel="noreferrer"
               className="inline-flex items-center justify-center bg-bone px-8 py-3 text-[12px] uppercase tracking-[0.25em] text-ink transition-opacity hover:opacity-80"
             >
-              Book via WhatsApp
+              {t.hero.ctaBook}
             </a>
           </motion.div>
         </div>

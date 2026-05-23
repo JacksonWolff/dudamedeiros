@@ -4,9 +4,19 @@ import Measurements from './components/Measurements'
 import GallerySection from './components/GallerySection'
 import Reel from './components/Reel'
 import ContactSection from './components/ContactSection'
-import { digitals, editorial, commercial } from './data/portfolio'
+import { galleries } from './data/portfolio'
+import { useLanguage } from './context/LanguageContext'
+
+function localizeItems(items, t) {
+  return items.map((item) => ({
+    src: item.src,
+    caption: t.captions[item.key],
+    alt: t.alts[item.key],
+  }))
+}
 
 export default function App() {
+  const { t } = useLanguage()
   return (
     <Layout>
       <Hero />
@@ -16,26 +26,26 @@ export default function App() {
 
       <GallerySection
         id="digitals"
-        eyebrow={`${digitals.title} / ${digitals.subtitle}`}
-        title="The Digitals"
-        items={digitals.items}
+        eyebrow={t.sections.digitals.eyebrow}
+        title={t.sections.digitals.title}
+        items={localizeItems(galleries.digitals.items, t)}
         columns={3}
       />
 
       <GallerySection
         id="editorial"
-        eyebrow={editorial.subtitle}
-        title={editorial.title}
-        items={editorial.items}
+        eyebrow={t.sections.editorial.eyebrow}
+        title={t.sections.editorial.title}
+        items={localizeItems(galleries.editorial.items, t)}
         columns={2}
         dark
       />
 
       <GallerySection
         id="commercial"
-        eyebrow={commercial.subtitle}
-        title={commercial.title}
-        items={commercial.items}
+        eyebrow={t.sections.commercial.eyebrow}
+        title={t.sections.commercial.title}
+        items={localizeItems(galleries.commercial.items, t)}
         columns={2}
       />
 
