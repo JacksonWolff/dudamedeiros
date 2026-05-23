@@ -5,6 +5,17 @@
 //  Components read translations through the `useLanguage()` hook.
 // ─────────────────────────────────────────────────────────────────────────────
 
+// Image imports — Vite hashes the filename on every build, so updates always
+// bust the browser cache without any manual versioning.
+import heroImg from '../assets/images/hero.jpg'
+import digitalFrontImg from '../assets/images/digital-front.jpg'
+import digitalProfileImg from '../assets/images/digital-profile.jpg'
+import digitalRelaxedImg from '../assets/images/digital-relaxed.jpg'
+import runwayImg from '../assets/images/runway.jpg'
+import editorialDetailImg from '../assets/images/editorial-detail.jpg'
+import commercialFashionImg from '../assets/images/commercial-fashion.jpg'
+import ecommerceImg from '../assets/images/ecommerce.jpg'
+
 export const profile = {
   // Name is rendered the same in both languages
   name: 'Duda Medeiros',
@@ -19,7 +30,7 @@ export const contact = {
 
 // Hero image — alt text comes from the active language strings.
 export const hero = {
-  src: 'images/hero.jpg',
+  src: heroImg,
 }
 
 // Measurement rows. Values that are numeric/universal stay here; values that
@@ -40,21 +51,21 @@ export const measurements = [
 export const galleries = {
   digitals: {
     items: [
-      { key: 'digitalFront', src: 'images/digital-front.jpg' },
-      { key: 'digitalProfile', src: 'images/digital-profile.jpg' },
-      { key: 'digitalRelaxed', src: 'images/digital-relaxed.jpg' },
+      { key: 'digitalFront', src: digitalFrontImg },
+      { key: 'digitalProfile', src: digitalProfileImg },
+      { key: 'digitalRelaxed', src: digitalRelaxedImg },
     ],
   },
   editorial: {
     items: [
-      { key: 'runway', src: 'images/runway.jpg' },
-      { key: 'editorialDetail', src: 'images/editorial-detail.jpg' },
+      { key: 'runway', src: runwayImg },
+      { key: 'editorialDetail', src: editorialDetailImg },
     ],
   },
   commercial: {
     items: [
-      { key: 'commercialFashion', src: 'images/commercial-fashion.jpg' },
-      { key: 'ecommerce', src: 'images/ecommerce.jpg' },
+      { key: 'commercialFashion', src: commercialFashionImg },
+      { key: 'ecommerce', src: ecommerceImg },
     ],
   },
 }
