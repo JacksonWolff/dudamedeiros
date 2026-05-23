@@ -23,6 +23,38 @@ export default function ContactSection() {
               <p className="font-serif text-2xl">{profile.name}</p>
               <p className="text-sm text-bone/70">{t.location}</p>
               <p className="text-sm text-bone/70">{t.availability}</p>
+
+              <dl className="!mt-6 space-y-1 text-sm text-bone/70">
+                <div className="flex gap-3">
+                  <dt className="sr-only">{t.sections.contact.email}</dt>
+                  <dd>
+                    <a href={`mailto:${contact.email}`} className="hover:text-bone transition-colors">
+                      {contact.email}
+                    </a>
+                  </dd>
+                </div>
+                <div className="flex gap-3">
+                  <dt className="sr-only">{t.sections.contact.phoneLabel}</dt>
+                  <dd>
+                    <a href={`tel:${contact.phone}`} className="hover:text-bone transition-colors">
+                      {contact.phoneDisplay}
+                    </a>
+                  </dd>
+                </div>
+                <div className="flex gap-3">
+                  <dt className="sr-only">Instagram</dt>
+                  <dd>
+                    <a
+                      href={contact.instagram}
+                      target="_blank"
+                      rel="noreferrer"
+                      className="hover:text-bone transition-colors"
+                    >
+                      {contact.instagramHandle}
+                    </a>
+                  </dd>
+                </div>
+              </dl>
             </div>
           </Reveal>
 

@@ -22,10 +22,13 @@ export const profile = {
 }
 
 export const contact = {
-  // Replace with real links when ready. The site works with these placeholders.
   whatsapp: 'https://wa.me/5547997932865',
+  // E.164 for tel: links and structured data; formatted version for humans.
+  phone: '+5547997932865',
+  phoneDisplay: '+55 47 99793-2865',
   email: 'dudynhabmedeiros@gmail.com',
   instagram: 'https://instagram.com/dudabmedeiros',
+  instagramHandle: '@dudabmedeiros',
 }
 
 // Hero image — alt text comes from the active language strings.
@@ -127,6 +130,7 @@ export const strings = {
         titleB: 'together.',
         whatsapp: 'WhatsApp Direct',
         email: 'Email',
+        phoneLabel: 'Phone',
         instagram: 'Instagram',
       },
     },
@@ -217,6 +221,7 @@ export const strings = {
         titleB: 'juntos.',
         whatsapp: 'WhatsApp Direto',
         email: 'E-mail',
+        phoneLabel: 'Telefone',
         instagram: 'Instagram',
       },
     },
