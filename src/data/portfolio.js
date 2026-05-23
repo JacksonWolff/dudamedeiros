@@ -31,10 +31,10 @@ export const measurements = [
 ]
 
 // ── Imagery ──────────────────────────────────────────────────────────────────
-// Paths are relative to /public. To swap in the higher-resolution Drive
-// originals, just replace the file at the same path in /public/images.
+// Paths are relative (no leading slash) so the site works at the custom domain
+// root AND at the GitHub Pages subpath. Files live in /public/images.
 export const hero = {
-  src: '/images/hero.jpg',
+  src: 'images/hero.jpg',
   alt: 'Duda Medeiros in black tailoring and dark sunglasses, seated — cover editorial',
 }
 
@@ -42,9 +42,9 @@ export const digitals = {
   title: 'Polaroids',
   subtitle: 'The Digitals',
   items: [
-    { src: '/images/digital-front.jpg', alt: 'Full body, front — digital', caption: 'Full Body — Front / Corpo Inteiro de Frente' },
-    { src: '/images/digital-profile.jpg', alt: 'Full body, profile — digital', caption: 'Full Body — Profile / Perfil de Corpo Inteiro' },
-    { src: '/images/digital-relaxed.jpg', alt: 'Full body, relaxed — digital', caption: 'Full Body — Relaxed / Corpo Inteiro Relaxada' },
+    { src: 'images/digital-front.jpg', alt: 'Full body, front — digital', caption: 'Full Body — Front / Corpo Inteiro de Frente' },
+    { src: 'images/digital-profile.jpg', alt: 'Full body, profile — digital', caption: 'Full Body — Profile / Perfil de Corpo Inteiro' },
+    { src: 'images/digital-relaxed.jpg', alt: 'Full body, relaxed — digital', caption: 'Full Body — Relaxed / Corpo Inteiro Relaxada' },
   ],
 }
 
@@ -52,8 +52,8 @@ export const editorial = {
   title: 'Editorial & Runway',
   subtitle: 'Alta Costura & Passarela',
   items: [
-    { src: '/images/runway.jpg', alt: 'Bridal gown on the runway, full body', caption: 'Bridal — Runway / Vestido de Noiva, Passarela' },
-    { src: '/images/editorial-detail.jpg', alt: 'Close detail of veil, backstage', caption: 'Veil Detail / Close no Véu' },
+    { src: 'images/runway.jpg', alt: 'Bridal gown on the runway, full body', caption: 'Bridal — Runway / Vestido de Noiva, Passarela' },
+    { src: 'images/editorial-detail.jpg', alt: 'Close detail of veil, backstage', caption: 'Veil Detail / Close no Véu' },
   ],
 }
 
@@ -61,8 +61,8 @@ export const commercial = {
   title: 'Commercial & High Fashion',
   subtitle: 'Highlights',
   items: [
-    { src: '/images/commercial-fashion.jpg', alt: 'Beauty close-up with jacket and tie', caption: 'Beauty — Jacket & Tie / Jaqueta e Gravata' },
-    { src: '/images/ecommerce.jpg', alt: 'E-commerce pose with bag and white boots', caption: 'E-commerce — Bag & White Boots / Bolsa e Bota Branca' },
+    { src: 'images/commercial-fashion.jpg', alt: 'Beauty close-up with jacket and tie', caption: 'Beauty — Jacket & Tie / Jaqueta e Gravata' },
+    { src: 'images/ecommerce.jpg', alt: 'E-commerce pose with bag and white boots', caption: 'E-commerce — Bag & White Boots / Bolsa e Bota Branca' },
   ],
 }
 
