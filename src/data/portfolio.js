@@ -23,7 +23,7 @@ export const profile = {
 
 export const contact = {
   // Replace with real links when ready. The site works with these placeholders.
-  whatsapp: '[INSERT_WHATSAPP_LINK]', // e.g. 'https://wa.me/5547999999999'
+  whatsapp: 'https://wa.me/5547997932865',
   email: '[INSERT_EMAIL]', // e.g. 'booking@dudamedeiros.com.br'
   instagram: 'https://instagram.com/dudabmedeiros',
 }
