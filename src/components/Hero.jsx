@@ -9,7 +9,7 @@ export default function Hero() {
       <motion.img
         src={hero.src}
         alt={t.hero.alt}
-        className="absolute inset-0 h-full w-full object-cover object-top"
+        className="absolute inset-0 h-full w-full object-cover object-center"
         initial={{ scale: 1.08, opacity: 0 }}
         animate={{ scale: 1, opacity: 1 }}
         transition={{ duration: 1.6, ease: [0.22, 1, 0.36, 1] }}
