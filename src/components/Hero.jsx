@@ -50,7 +50,7 @@ export default function Hero() {
               {t.hero.ctaPortfolio}
             </a>
             <a
-              href={contact.whatsapp}
+              href={`${contact.whatsapp}?text=${encodeURIComponent(t.waMessage)}`}
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center justify-center bg-bone px-8 py-3 text-[12px] uppercase tracking-[0.25em] text-ink transition-opacity hover:opacity-80"

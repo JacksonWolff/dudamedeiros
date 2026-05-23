@@ -29,7 +29,7 @@ export default function ContactSection() {
           <Reveal delay={0.1}>
             <div className="flex flex-col gap-3 sm:flex-row md:flex-col lg:flex-row">
               <a
-                href={contact.whatsapp}
+                href={`${contact.whatsapp}?text=${encodeURIComponent(t.waMessage)}`}
                 target="_blank"
                 rel="noreferrer"
                 className="inline-flex items-center justify-center bg-bone px-10 py-4 text-[12px] uppercase tracking-[0.25em] text-ink transition-opacity hover:opacity-80"

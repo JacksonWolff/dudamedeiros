@@ -24,7 +24,7 @@ export const profile = {
 export const contact = {
   // Replace with real links when ready. The site works with these placeholders.
   whatsapp: 'https://wa.me/5547997932865',
-  email: '[INSERT_EMAIL]', // e.g. 'booking@dudamedeiros.com.br'
+  email: 'dudynhabmedeiros@gmail.com',
   instagram: 'https://instagram.com/dudabmedeiros',
 }
 
@@ -107,6 +107,8 @@ export const strings = {
       ctaPortfolio: 'View Portfolio',
       ctaBook: 'Book via WhatsApp',
     },
+
+    waMessage: "Hi Duda — I'd like to discuss a booking.",
 
     sections: {
       digitals: { eyebrow: 'Polaroids', title: 'The Digitals' },
@@ -195,6 +197,8 @@ export const strings = {
       ctaPortfolio: 'Ver Portfólio',
       ctaBook: 'Agendar pelo WhatsApp',
     },
+
+    waMessage: 'Olá Duda! Gostaria de conversar sobre um trabalho.',
 
     sections: {
       digitals: { eyebrow: 'Polaroids', title: 'Polaroids' },
