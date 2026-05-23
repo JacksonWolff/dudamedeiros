@@ -19,11 +19,11 @@ export default function Measurements() {
               <p className="mt-4 text-sm leading-relaxed text-stone">{t.about[1]}</p>
               <dl className="mt-8 space-y-3 text-sm">
                 <div className="flex gap-3">
-                  <dt className="eyebrow w-28 shrink-0 pt-1">{s.locationLabel}</dt>
+                  <dt className="eyebrow w-44 shrink-0 pt-1">{s.locationLabel}</dt>
                   <dd>{t.location}</dd>
                 </div>
                 <div className="flex gap-3">
-                  <dt className="eyebrow w-28 shrink-0 pt-1">{s.statusLabel}</dt>
+                  <dt className="eyebrow w-44 shrink-0 pt-1">{s.statusLabel}</dt>
                   <dd>{t.availability}</dd>
                 </div>
               </dl>
